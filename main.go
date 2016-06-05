@@ -1,10 +1,9 @@
-/*
- * Personal website handler in Go Lang.
+/* Personal website handler in GoLang.
  * Author: Brian Padilla, bpadilla614@gmail.com
  * This work is licensed under a Creative Commons Attribution 4.0 International License.
  */
 
-package brianWebsite
+package personalWebsite
 
 import (
 	"net/http"
@@ -13,6 +12,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// handle the main page
 func index(res http.ResponseWriter, req *http.Request) {
 	tpl, err := template.ParseFiles("index.html")
 	if err != nil { // if index.html does not exist, give user a error
@@ -21,6 +21,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 	tpl.Execute(res, nil) // execute the html file
 }
 
+// initalize the website
 func init() {
 	r := mux.NewRouter() // create new router
 
