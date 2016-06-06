@@ -6,16 +6,16 @@
 package personalWebsite
 
 import (
-	"net/http"
-	"log"
-	"html/template"
 	"github.com/gorilla/mux"
+	"html/template"
+	"log"
+	"net/http"
 )
 
 // handle the main page
 func index(res http.ResponseWriter, req *http.Request) {
 	tpl, err := template.ParseFiles("index.html")
-	if err != nil { // if index.html does not exist, give user a error
+	if err != nil { // if file does not exist, give user a error
 		log.Fatalln(err) // stops program if file does not exist
 	}
 	tpl.Execute(res, nil) // execute the html file

@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /images/
-Disallow: /license/
-Disallow: /app.yaml
-Disallow: /main.go
-Disallow: /README.md
